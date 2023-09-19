@@ -1,7 +1,7 @@
 ## MLOPS-Playground
 
 <p align="center">
-  <img src="./assets/ml_diagram.svg" alt="Resumo Machine Leaning" width="500">
+  <img src="./assets/ml_diagram_2.svg" alt="Resumo Machine Leaning" width="1000">
 </p>
 
 Este repositório é um ambiente dedicado para estudos e experimentos relacionados a Machine Learning Operations (MLOps). 
