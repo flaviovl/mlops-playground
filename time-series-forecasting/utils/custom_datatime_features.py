@@ -9,7 +9,7 @@ def load_data():
         file,
         sep=",",
         usecols=["Date_Time", "CO_sensor", "RH"],
-        index_col=["Date_Time"],
+        indedf_col=["Date_Time"],
     )
     data.index = pd.to_datetime(data.index, format="%d/%m/%Y %H:%M:%S")
     data.columns = data.columns.str.lower()
@@ -26,19 +26,19 @@ class DatetimeFeatures(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
 
-    def transform(self, X):
-        X_copy = X.copy()
+    def transform(self, df):
+        df_copy = df.copy()
 
-        X_copy["year"] = X_copy.index.year
-        X_copy["month"] = X_copy.index.month
-        X_copy["day"] = X_copy.index.day
-        X_copy["hour"] = X_copy.index.hour
-        X_copy["minute"] = X_copy.index.minute
-        X_copy["second"] = X_copy.index.second
-        X_copy["day_of_week"] = X_copy.index.dayofweek
-        X_copy["day_of_year"] = X_copy.index.dayofyear
+        df_copy["year"] = df_copy.index.year
+        df_copy["month"] = df_copy.index.month
+        df_copy["day"] = df_copy.index.day
+        df_copy["hour"] = df_copy.index.hour
+        df_copy["minute"] = df_copy.index.minute
+        df_copy["second"] = df_copy.index.second
+        df_copy["day_of_week"] = df_copy.index.dayofweek
+        df_copy["day_of_year"] = df_copy.index.dayofyear
 
-        return X_copy
+        return df_copy
 
 
 if __name__ == "__main__":
